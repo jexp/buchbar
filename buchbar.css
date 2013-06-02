@@ -1,0 +1,82 @@
+* {
+	margin:0;
+	padding:0;
+	}
+
+html, body {
+	height:100%;
+	background-color:#000000;
+	background: url(img/Kachel.jpg) center center repeat;
+}
+
+body {
+	
+	}
+
+#distance { 
+	width:1px;
+	height:50%;
+	background-color:#000;
+	margin-bottom:-350px; /* half of container's height */
+	float:left;
+	}
+
+#container {
+	margin:0 auto;
+	position:relative;
+	text-align:left;
+	height:700px;
+	width:1000px;
+	clear:left;
+	background-color:#000;
+	border:0px solid #000;
+	border-top-color:#000;
+	border-left-color:#000;
+	}
+
+	a:link { text-decoration:none; font-weight:bold; color:#1f0e00; }
+	a:visited { text-decoration:none; font-weight:bold; color:#1f0e00; }
+	a:hover { text-decoration:underline; font-weight:bold; color: #1f0e00; }
+	a:active { text-decoration:none; font-weight:bold; background-color: none; }
+	a:focus { text-decoration:none; font-weight:bold; background-color: none; }
+
+	.Text {
+		position: absolute;
+		font-family: "Courier New"; 
+		font-size: 14px;
+		font-weight: normal;
+		color:#1f0e00;
+		text-align:left;
+	}
+
+	#Offen {
+		left: 90px;
+		top: 345px;
+		text-align:center;
+		font-size:14px;
+		width: 120px;
+		font-weight: bold;
+		transform: rotate(-15deg);
+		-ms-transform: rotate(-15deg); /* IE 9 */
+		-webkit-transform: rotate(-15deg); /* Safari and Chrome */
+	}
+
+	#Bullet {
+		left: 125px;
+		top: 510px;
+		text-align:left;
+		font-size:14px;
+		line-height: 19px;
+		width: 400px;
+		font-weight: bold;
+	}
+
+
+#Impressum {
+	left: 850px;
+	top: 630px;
+	font-size: 14px;
+}
+#Impressum a:link {
+	color: AAA;
+} 

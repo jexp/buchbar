@@ -1,0 +1,163 @@
+<!--#include virtual="Kopf.html" -->
+
+<img src="img/Katalog.jpg" style="position: absolute; left: 498px; top: 0px">
+
+<style type="text/css">
+
+#Titel1 {
+	left: 720px;
+	top: 70px;
+	font-weight:bold;
+	text-align:center;
+	font-size:14px;
+	width: 150px;
+	transform: rotate(-3deg);
+	-ms-transform: rotate(-3deg); /* IE 9 */
+	-webkit-transform: rotate(-3deg); /* Safari and Chrome */
+}
+#Text1 {
+	left: 724px;
+	top: 110px;
+	text-align:left;
+	font-size:14px;
+	width: 150px;
+	transform: rotate(-3deg);
+	-ms-transform: rotate(-3deg); /* IE 9 */
+	-webkit-transform: rotate(-3deg); /* Safari and Chrome */
+}
+#Bild1 {
+	position:absolute;
+	display:inline-block;
+	left: 544px;
+	top: 90px;
+	transform: rotate(5deg);
+	-ms-transform: rotate(5deg); /* IE 9 */
+	-webkit-transform: rotate(5deg); /* Safari and Chrome */
+}
+
+#Preis1 {
+	left: 611px;
+	top: 253px;
+	font-weight:bold;
+	font-size:15px;
+	text-align:right;
+	width: 80px;
+	transform: rotate(5deg);
+	-ms-transform: rotate(5deg); /* IE 9 */
+	-webkit-transform: rotate(5deg); /* Safari and Chrome */
+}
+
+#Titel2 {
+	left: 732px;
+	top: 333px;
+	font-weight:bold;
+	text-align:center;
+	font-size:14px;
+	width: 150px;
+	transform: rotate(6deg);
+	-ms-transform: rotate(6deg); /* IE 9 */
+	-webkit-transform: rotate(6deg); /* Safari and Chrome */
+}
+
+#Text2 {
+	left: 732px;
+	top: 368px;
+	text-align:left;
+	font-size:14px;
+	width: 140px;
+	transform: rotate(6deg);
+	-ms-transform: rotate(6deg); /* IE 9 */
+	-webkit-transform: rotate(6deg); /* Safari and Chrome */
+}
+
+#Bild2 {
+	position:absolute;
+	display:inline-block;
+	left: 561px;
+	top: 350px;
+	transform: rotate(-3deg);
+	-ms-transform: rotate(-3deg); /* IE 9 */
+	-webkit-transform: rotate(-3deg); /* Safari and Chrome */
+}
+
+#Preis2 {
+	left: 634px;
+	top: 512px;
+	font-weight:bold;
+	font-size:15px;
+	text-align:right;
+	width: 80px;
+	transform: rotate(-3deg);
+	-ms-transform: rotate(-3deg); /* IE 9 */
+	-webkit-transform: rotate(-3deg); /* Safari and Chrome */
+}
+#Seiten {
+	left: 540px;
+	top: 600px;
+	font-size: 14px;
+	font-weight:bold;
+}
+
+</style>
+
+
+<script type="text/javascript" charset="utf-8">
+var angebot = [
+{ kleinbild: "kymera_small.gif", bild:"kymera.jpg", titel: "Kymera Zauberstab", preis:"59,-",
+text: "ist nicht nur ein echter Zauberstab, sondern auch eine frei programmierbare Universal-Infrarot-Fernbedienung mit Gestensteuerung. 13 Funktionen."},
+{ kleinbild: "screwdriver.gif", bild:"screwdriver.jpg", titel: "Doctor Who Schraubenzieher", preis:"75,-",
+text: "Exakte Replik, programmierbare Universal Infrarot Fernbedienung mit Gestenerkennung &amp; Sprachsteuerung. 39 Funktionen programmierbar. Zus&auml;tzlich 13 Sound und Lichteffekte uvm."},
+{ kleinbild: "neocube_small.gif", bild:"neocube.gif", titel: "216 ultrastarke Magnetkugeln", preis:"20,-",
+text: "Diese starken Magneten lassen alles mit sich machen - ob Würfel, Kugeln, Fussb&auml;lle, Ketten, Ringe, Kompass. Eurer Phantasie sind keine Grenzen gesetzt"},
+]
+
+function setText(id, text) {
+	var e=document.getElementById(id);
+	e.innerHTML=text;
+}
+function setImage(id, url) {
+	document.getElementById(id).src=url;
+}
+function setInfo(idx,item) {
+	if (!item) return;
+	setText("Titel"+idx,item.titel);
+	setImage("Bild"+idx,"img/"+item.kleinbild);
+	setText("Text"+idx,item.text);
+	setText("Preis"+idx,item.preis+" &euro;");
+}
+var max = 1;
+function page(n) {
+	n=Math.max(Math.min(n-1,max),0);
+	setInfo(1,angebot[n*2])
+	setInfo(2,angebot[n*2+1])
+}
+window.onload=function() {
+	page(1);
+}
+</script>
+
+<!---------------X-HIER SCHREIBST DU DEINE NEWS REIN max. 16 Zeichen!------------------------>
+
+<img src="img/kymera_small.gif" id="Bild1"/>
+<h3 class="Text" id="Titel1">Kymera Zauberstab Fernbedienung</h3>
+<p class="Text" id="Text1">
+ist nicht nur ein echter Zauberstab, sondern auch eine frei programmierbare Universal-Infrarot-Fernbedienung mit Gestensteuerung. 13 Funktionen.
+</p>
+<p class="Text" id="Preis1">
+59,- &euro;
+</p>
+
+<img src="img/screwdriver.gif" id="Bild2"/>
+<h3 class="Text" id="Titel2">Doctor Who Schraubenzieher</h3>
+<p class="Text" id="Text2">
+Exakte Replik, programmierbare Universal Infrarot Fernbedienung mit Gestenerkennung &amp; Sprachsteuerung. 39 Funktionen programmierbar. Zus&auml;tzlich 13 Sound und Lichteffekte uvm.
+</p>
+<p class="Text" id="Preis2">
+75,- &euro;
+</p>
+
+<p class="Text" id="Seiten">
+	Seite: <a href="#" onclick="page(1);return false;">1</a> <a href="#" onclick="page(2);return false;">2</a>
+</p>
+
+<!--#include virtual="Fuss.html" -->
