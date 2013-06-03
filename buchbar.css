@@ -79,6 +79,6 @@ body {
 	top: 630px;
 	font-size: 14px;
 }
-#Impressum a:link {
+#Impressum a:link, #Impressum a:visited, #Impressum a:hover {
 	color: AAA;
 } 
